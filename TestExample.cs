@@ -47,21 +47,33 @@ string[] CreateArray2(string[] args)
         if(args[i].Length <= length) size++;
     }
 
-    string[] array = new string[size];
+    string[] array2 = new string[size];
     int j = 0;
 
     for (int i = 0; i < args.Length; i++)
     {
         if(args[i].Length <= length)
         {
-            array[j] = args[i];
+            array2[j] = args[i];
             j++;
         }
     }
-    return array;   
+    return array2;   
+}
+
+void PrintArray2(string[] array2)
+{
+    Console.Write("Новый массив: [");
+    for (int i = 0; i < array2.Length; i++)
+        {
+            if (i < array2.Length-1) Console.Write($"\"{array2[i]}\", ");
+            else Console.Write($"\"{array2[i]}\"");
+        }
+    Console.Write("]");
+    Console.WriteLine();
 }
 
 CreateArray1(array1);
 PrintArray(array1);
 string[] array2 = CreateArray2(array1);
-PrintArray(array2);
+PrintArray2(array2);
